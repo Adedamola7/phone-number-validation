@@ -1,0 +1,28 @@
+def isvalidphonenumber(text):
+    if len(text) != 17:
+        return False
+    if text[0] != "+":
+        return False
+    for i in range(1, 4):
+        if not text[i].isdecimal():
+            return False
+    if text[4] != '-':
+        return False
+    for i in range(5, 8):
+        if not text[i].isdecimal():
+            return False
+    if text[8] != '-':
+        return False
+    for i in range(9, 12):
+        if not text[i].isdecimal():
+            return False
+    if text[12] != '-':
+        return False
+    for i in range(13, 17):
+        if not text[i].isdecimal():
+            return False
+    return "Phone Number Is Valid"
+    
+print("Your number must be in this format")
+print("+aaa-aaa-aaa-aaaa")
+print(isvalidphonenumber(input()))
